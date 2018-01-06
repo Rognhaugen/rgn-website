@@ -1,0 +1,225 @@
+.arrow {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left:-20px;
+}
+
+.bounce {
+	-webkit-animation-name: bounce;
+	-moz-animation-name: bounce;
+	-o-animation-name: bounce;
+	animation-name: bounce;
+}
+.animated{
+    -webkit-animation-fill-mode:both;
+    -moz-animation-fill-mode:both;
+    -ms-animation-fill-mode:both;
+    -o-animation-fill-mode:both;
+
+    animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+
+    animation-fill-mode:both;
+    -webkit-animation-duration:6s;
+    -moz-animation-duration:6s;
+    -ms-animation-duration:6s;
+    -o-animation-duration:6s;
+    animation-duration:6s;
+}
+
+@-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100%{
+        -webkit-transform: translateY(0);
+    }
+    40%{
+        -webkit-transform: translateY(-15px);
+    }
+	60% {
+        -webkit-transform: translateY(-7px);
+    }
+}
+
+@-moz-keyframes bounce {
+	0%, 20%, 50%, 80%, 100%{
+        -moz-transform: translateY(0);
+    }
+	40%{
+        -moz-transform: translateY(-15px);
+    }
+	60%{
+        -moz-transform: translateY(-7px);
+    }
+}
+
+@-o-keyframes bounce {
+	0%, 20%, 50%, 80%, 100%{
+        -o-transform: translateY(0);
+    }
+	40%{
+        -o-transform: translateY(-15px);
+    }
+	60%{
+        -o-transform: translateY(-7px);
+    }
+}
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+	40%{
+        transform: translateY(-15px);
+    }
+	60%{
+        transform: translateY(-7px);
+    }
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Inconsolata', monospace;
+    font-size: 20px;
+}
+.one-vh {
+    height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.one-vh img{
+    border-radius: 50%;
+    width: 180px;
+    margin-right: 30px;
+}
+.one-vh p{
+    color: #636262;
+}
+.one-vh .text h1{
+    font-family: 'Noto Serif', serif;
+    font-size: 42px;
+    padding: 0px;
+    margin: 0px;
+}
+.one-vh .text p.tagline{
+    padding: 0;
+    margin: 0;
+}
+.absolute{
+    position: absolute;
+    bottom: 50px;
+}
+.absolute img{
+    width: 50px;
+    margin: 0 auto;
+    display: block;
+}
+.bounce {
+    -webkit-animation-name: bounce;
+  	-moz-animation-name: bounce;
+  	-o-animation-name: bounce;
+  	animation-name: bounce;
+}
+.one-vh .bottom-part{
+    padding-top: 20px;
+}
+.one-vh .bottom-part p{
+    padding: 0;
+    margin: 0;
+}
+
+a:link, a:visited, a{
+    color: #636262;
+    background-color: #F4F7DC;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+
+#portfolio{
+    max-width: 800px;
+    margin: 0 auto;
+}
+#portfolio .sort{
+    text-align: center;
+}
+.single{
+    text-align: center;
+    color: #636262;
+    margin-top: 100px;
+}
+.single img{
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+}
+.single h2{
+    font-size: 22px;
+}
+.single .type{
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.active{
+    color: #000 !important;
+    background-color: #fff !important;
+}
+footer{
+    text-align: center;
+    background-color: #cecece;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    margin-top: 40px;
+    color: gray;
+}
+
+@media only screen and (max-width: 800px) {
+  .one-vh{
+    display: block;
+    text-align: center;
+    padding-top: 30px;
+  }
+  .one-vh img{
+      margin-right: 0px;
+  }
+  .absolute{
+      position: static;
+      padding-top: 30px;
+  }
+  .arrow {
+    position: relative;
+    bottom: 0;
+    left: 0%;
+  }
+  .absolute a:link, .absolute a:visited{
+    text-decoration: none;
+    background: none;
+  }
+  .absolute img{
+    width: 50px;
+    margin: 0 auto;
+    display: inline;
+    color: inherit;
+  }
+}

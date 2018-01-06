@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <title>Sigurd Rognhaugen</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Serif" rel="stylesheet">
+    <script src="js/taffy.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico">
+    <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    </head>
+    <body>
+    <div class="one-vh">
+        <div class="image">
+            <img src="img/meg.jpg" alt="bilde av meg">
+        </div>
+        <div class="text">
+            <h1>Sigurd Rognhaugen</h1>
+            <p class="tagline">Interaction designer and front-end developer</p>
+            <div class="bottom-part">
+                <p>Passionate about politics, beer and great design.</p>
+                <p><a href="https://github.com/rognhaugen">GitHub</a> - <a href="http://instagram.com/srogn">Instagram</a> - <a href="https://www.linkedin.com/in/sigurd-rognhaugen-17098694/">LinkedIn</a></p>
+            </div>
+        </div>
+        <div class="absolute">
+            <p>My experience</p>
+            <div class="animated bounce">
+                <a href="#portfolio"><img src="img/pil-ned.svg" style="text-align: center;" alt="bla nedover!"></a>
+            </div>
+        </div>
+    </div>
+    <div id="portfolio">
+        <div class="sort">
+            <p>Filter by:</p>
+            <p><a href="#portfolio-singles" onclick="setType(this, 'Graphic')">Graphics</a> - <a href="#portfolio-singles" onclick="setType(this, 'Web')">Web</a> - <a href="#portfolio-singles" onclick="setType(this, 'Interaction design')">Interaction design</a></p>
+            <p><a href="#portfolio-singles" onclick="setType(this, 'Project lead')">Project lead</a> - <a href="#portfolio-singles" onclick="setType(this, 'Internship')">Internships</a> - <a href="#portfolio-singles" onclick="setType(this, 'Organisation')">Organisations</a></p>
+            <p><a href="#portfolio-singles" onclick="setType(this, 'all')" class="active">All (14)</a></p>
+        </div>
+        <div id="portfolio-singles">
+            <!-- Her vil JS legge seg :) -->
+        </div>
+    </div>
+    <script src="js/portfolio.js"></script>
+    <script>
+        var type = "all";
+        updatePortfolio();
+
+        function updateLinks(elem){
+            var a = document.getElementsByTagName('a');
+            for (i = 0; i < a.length; i++) {
+                a[i].classList.remove('active')
+            }
+            elem.classList.add('active');
+        }
+
+        function setType(elem, chosenType){
+            updateLinks(elem);
+            type = chosenType;
+            var myNode = document.getElementById("portfolio-singles");
+            while (myNode.firstChild) {
+                myNode.removeChild(myNode.firstChild);
+            }
+            updatePortfolio((chosenType == "all") ? "" : chosenType);
+        }
+        function updatePortfolio(streng){
+            if (type == "all"){
+                portfolio().each(function (r){
+                    writeHTML(r);
+                });
+            }
+            else{
+                portfolio({type: streng}).each(function (r){
+                    writeHTML(r);
+                });
+            }
+        }
+
+    </script>
+    <footer>
+        <p>Made with <a href="http://taffydb.com">TaffyDB</a>, <a href="https://google.com/fonts">Google Fonts</a> and vanilla JS. Check out the source code on Github.</p>
+    </footer>
+</body>
+</html>
